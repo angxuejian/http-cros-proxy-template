@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nodejs-Http-Proxy-Template</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  
+  <div>
+    <button onclick="get()">GET请求</button>
+    <button onclick="post()">POST请求</button>
+  </div>
+
+  <ul id="content"></ul>
+
+  <script>
+    const ajax = new XMLHttpRequest()
+    const ul = document.getElementById('content')
+
+    // 封装请求
+    const request = function(prams) {
+      const { url, method = 'GET', data = '' } = prams
+      ajax.open(method, `api/${url}`)
+
+      ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;");//缺少这句，后台无法获取参数
+      ajax.setRequestHeader("X-Token", "1122334")
+
+      ajax.send(data)
+
+      return new Promise((resolve, reject) => {
+        ajax.onload = function(res) {
+          console.log(res.target)
+          if (res.target.status === 200) {
+            resolve(JSON.parse(res.target.response))
+          } else {
+            reject('请求错误 - 请看控制台')
+          }
+          
+        }
+      })
+    }
+
+    // get请求
+    const get = function() {
+      const data = {
+        url: 'yfzc/getuserinfo',
+        method: 'GET'
+      }
+      request(data).then(res => {
+        if (!res.code) {
+          for (const k in res.data) {
+            const li = document.createElement('li')
+            li.innerText = res.data[k]
+            ul.append(li)
+          }
+        } else {
+          alert('请求成功，接口失败')
+        }
+      }).catch(err => alert(err))
+    }
+
+    // post请求
+    const post = function() {
+      const data = {
+        url: 'yfzc/getfilelist',
+        method: 'POST',
+        data: 'test=1'
+      }
+      request(data).then(res => {
+        for (const k in res.data) {
+            const li = document.createElement('li')
+            li.innerText = res.data[k]
+            ul.append(li)
+          }
+      }).catch(err => alert(err))
+    }
+
+  </script>
+</body>
+</html>

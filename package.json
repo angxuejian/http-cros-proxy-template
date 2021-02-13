@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-http-proxy-template",
+  "version": "0.1.0",
+  "description": "nodejs跨域代理模板",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angxuejian/nodejs-http-proxy-template.git"
+  },
+  "keywords": [
+    "proxy"
+  ],
+  "author": "angxuejian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angxuejian/nodejs-http-proxy-template/issues"
+  },
+  "homepage": "https://github.com/angxuejian/nodejs-http-proxy-template#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.6"
+  }
+}
