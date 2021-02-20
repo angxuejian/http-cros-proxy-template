@@ -18,5 +18,5 @@ app.use(express.static('./dist'))
 app.use('/api', createProxyMiddleware(proxy))
 
 app.listen(port, () => {
-  console.log('\nApp running at:\n\n- Local: \x1B[34m%s\x1B[0m\n', 'http://localhost:' + port + '/')
+  console.log('\nApp running at:\n\n- Local: \x1B[34m%s\x1B[0m\n', 'http://localhost:' + port)
 })
