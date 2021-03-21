@@ -13,7 +13,7 @@ const proxy = {
 
 const app = express()
 const port = config.PORT // 端口
-app.use(express.static('./dist'))
+app.use(express.static('./public'))
 
 app.use('/api', createProxyMiddleware(proxy))
 
