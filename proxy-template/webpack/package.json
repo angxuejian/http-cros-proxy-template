@@ -19,7 +19,9 @@
     "build": "webpack",
     "serve": "webpack-dev-server"
   },
-  "keywords": [],
+  "keywords": [
+    "proxy"
+  ],
   "author": "",
   "license": "ISC"
 }
