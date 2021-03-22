@@ -9,7 +9,7 @@ npm install
 ## 替换
 - 修改  `src目录`下的 main.js
 - 修改  `public目录`下的 index.html
-- 替换 `main.config.js`中的 BASE_URL 地址
+- 替换  `main.config.js`中的 BASE_URL 地址
 ## 运行
 ```
 npm run serve

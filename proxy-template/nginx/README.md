@@ -8,12 +8,10 @@
 - 修改 `conf目录`下的 nginx.conf(#49) 中的proxy_pass 配置
 
 ### 运行
+进入当前文件夹中的cmd；**文件夹名称不能有中文、会运行失败 ！**
 ```
-// 进入当前文件夹中的cmd
-
 start nginx 
 ```
-本地地址：http://localhost:1548
 
 
 ### 常用命令

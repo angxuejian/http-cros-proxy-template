@@ -4,9 +4,9 @@ Corss-domain proxy template
 ## 目录
 名称 | 简介| 地址 
 --- | --- |---
-express | nodejs中间件跨域 | [ >>> ](/proxy-template/express/README.md)
-webpack | nodejs中间件跨域 | [ >>> ](/proxy-template/webpack/README.md)
-nginx   | nginx反向代理    | [ >>> ](/proxy-template/nginx/README.md)
+express | nodejs中间件跨域 | [ >>> ](proxy-template/express)
+webpack | nodejs中间件跨域 | [ >>> ](proxy-template/webpack)
+nginx   | nginx反向代理    | [ >>> ](proxy-template/nginx)
 
 ## localhost
 均运行在 http://localhost:1548
