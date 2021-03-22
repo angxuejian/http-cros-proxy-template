@@ -4,3 +4,6 @@
 2021/03/22 17:13:08 [notice] 22760#21488: signal process started
 2021/03/22 17:14:05 [notice] 22764#11372: signal process started
 2021/03/22 17:15:03 [notice] 22216#13160: signal process started
+2021/03/22 17:32:08 [emerg] 18924#12552: CreateDirectory() "C:\Users\Administrator\Desktop\http-cros-proxy-template\proxy-template\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2021/03/22 17:42:25 [notice] 736#14588: signal process started
+2021/03/22 17:42:29 [notice] 12876#11800: signal process started
