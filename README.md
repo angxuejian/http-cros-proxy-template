@@ -1,40 +1,41 @@
-# http-cros-proxy-template
-Corss-domain proxy template
+# ngnix-proxy
+使用 **ngnix 反向代理**跨域；版本：ngnix-1.18.0
 
-## 目录
-名称 | 简介| 地址 
---- | --- |---
-express | nodejs中间件跨域 | [ >>> ](proxy-template/express)
-webpack | nodejs中间件跨域 | [ >>> ](proxy-template/webpack)
-nginx   | nginx反向代理    | [ >>> ](proxy-template/nginx)
+## 如何使用
 
-## localhost
-均运行在 http://localhost:1548
+### 替换
+- 替换 `html目录`下的 index.html
+- 修改 `conf目录`下的 nginx.conf(#49) 中的proxy_pass 配置
 
-
-
-## 原理
-1、express
-
-通过`express框架`创建一个本地服务器，使用`http-proxy-middleware中间件` 监听到客户端的 `api` 请求后 通过本地代理服务器进行转发请求
-
-`客户端 -> 本地服务器 -> 后台服务器`
+### 运行
+进入当前文件夹中的cmd；**文件夹名称不能有中文、会运行失败 ！**
+```
+start nginx 
+```
 
 
-2、webpack
+### 常用命令
+- `start nginx` 开启服务
+- `nginx -s quit` 关闭服务
+- `nginx -s reload` 修改配置后 刷新配置
+<br>
+<br>
 
-将 `1、express`封装成 webpack-dev-server 食用即可
+- `tasklist /fi "imagename eq nginx.exe"` 查看 nginx 进程
+- `taskkill /f /im nginx.exe` 关闭 所有 nginx 进程
+- `taskkill /f /pid xxx` 关闭指定 pid 进程
+<br>
+<br>
 
-3、ngnix 
+- `netstat -ano` 查看端口使用情况
+- `netstat -ano | findstr 端口号` 查看指定端口号使用情况
+### 注意事项
 
-ngnix服务启动后会 `监听指定端口号`的请求，`将其请求转发到`对应的服务器上
+1、 `start nginx`后屏幕一闪而过, 并没有启动服务？
 
-## 问答
-1、中间件与反向代理的区别？
+- 查看`端口`是否被占用，切换端口
+- 查看`logs目录`下的`error.log`，以防`语法错误`
 
-二者有些相似、模棱两可、拿不准; [去点醒他](https://github.com/angxuejian/http-cros-proxy-template/issues)
+2、 修改nginx配置后 没起作用？
 
-## 许可
-[MIT License](LICENSE)
-
-http-cros-proxy-template Copyright © 2021 angxuejian
+- 可能是运行多个nginx服务问题。先关闭所有nginx服务，重新打开
