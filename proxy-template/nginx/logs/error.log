@@ -1,9 +1,0 @@
-2021/03/22 16:51:21 [error] 16220#20788: *1 CreateFile() "C:\Users\Administrator\Desktop\http-cros-proxy-template\proxy-template\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1548", referrer: "http://localhost:1548/"
-2021/03/22 16:54:31 [notice] 15072#18360: signal process started
-2021/03/22 16:54:31 [error] 15072#18360: OpenEvent("Global\ngx_reload_12952") failed (2: The system cannot find the file specified)
-2021/03/22 17:13:08 [notice] 22760#21488: signal process started
-2021/03/22 17:14:05 [notice] 22764#11372: signal process started
-2021/03/22 17:15:03 [notice] 22216#13160: signal process started
-2021/03/22 17:32:08 [emerg] 18924#12552: CreateDirectory() "C:\Users\Administrator\Desktop\http-cros-proxy-template\proxy-template\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
-2021/03/22 17:42:25 [notice] 736#14588: signal process started
-2021/03/22 17:42:29 [notice] 12876#11800: signal process started
